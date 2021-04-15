@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class frmUsers
+    partial class Ranch_Users
     {
         /// <summary>
         /// Required designer variable.
@@ -34,28 +34,28 @@
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.txtUserPasswd = new System.Windows.Forms.TextBox();
-            this.DateCreated = new System.Windows.Forms.Label();
             this.FirstName = new System.Windows.Forms.Label();
             this.UserPassword = new System.Windows.Forms.Label();
             this.UserName = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.LastName = new System.Windows.Forms.Label();
+            this.DateCreated = new System.Windows.Forms.Label();
             this.dtbdatecreated = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ranchUsersDataSet = new WindowsFormsApp1.RanchUsersDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new WindowsFormsApp1.RanchUsersDataSetTableAdapters.UsersTableAdapter();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ranchUsersDataSet = new WindowsFormsApp1.RanchUsersDataSet();
+            this.usersTableAdapter = new WindowsFormsApp1.RanchUsersDataSetTableAdapters.UsersTableAdapter();
             this.addUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ranchUsersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ranchUsersDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,16 +109,6 @@
             this.txtUserPasswd.Size = new System.Drawing.Size(187, 20);
             this.txtUserPasswd.TabIndex = 12;
             // 
-            // DateCreated
-            // 
-            this.DateCreated.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.DateCreated.AutoSize = true;
-            this.DateCreated.Location = new System.Drawing.Point(115, 228);
-            this.DateCreated.Name = "DateCreated";
-            this.DateCreated.Size = new System.Drawing.Size(70, 13);
-            this.DateCreated.TabIndex = 10;
-            this.DateCreated.Text = "Date Created";
-            // 
             // FirstName
             // 
             this.FirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -167,6 +157,16 @@
             this.LastName.TabIndex = 6;
             this.LastName.Text = "Last Name";
             // 
+            // DateCreated
+            // 
+            this.DateCreated.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.DateCreated.AutoSize = true;
+            this.DateCreated.Location = new System.Drawing.Point(115, 228);
+            this.DateCreated.Name = "DateCreated";
+            this.DateCreated.Size = new System.Drawing.Size(70, 13);
+            this.DateCreated.TabIndex = 10;
+            this.DateCreated.Text = "Date Created";
+            // 
             // dtbdatecreated
             // 
             this.dtbdatecreated.Location = new System.Drawing.Point(191, 211);
@@ -186,24 +186,11 @@
             this.lastNameDataGridViewTextBoxColumn,
             this.dateCreatedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(97, 288);
+            this.dataGridView1.Location = new System.Drawing.Point(143, 353);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(634, 150);
             this.dataGridView1.TabIndex = 6;
-            // 
-            // ranchUsersDataSet
-            // 
-            this.ranchUsersDataSet.DataSetName = "RanchUsersDataSet";
-            this.ranchUsersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.ranchUsersDataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -242,9 +229,23 @@
             this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
             this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.ranchUsersDataSet;
+            // 
+            // ranchUsersDataSet
+            // 
+            this.ranchUsersDataSet.DataSetName = "RanchUsersDataSet";
+            this.ranchUsersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
             // addUser
             // 
-            this.addUser.Location = new System.Drawing.Point(519, 184);
+            this.addUser.Location = new System.Drawing.Point(153, 304);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(75, 23);
             this.addUser.TabIndex = 7;
@@ -252,22 +253,22 @@
             this.addUser.UseVisualStyleBackColor = true;
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
-            // frmUsers
+            // Ranch_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 569);
             this.Controls.Add(this.addUser);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmUsers";
-            this.Text = "frmUsers";
+            this.Name = "Ranch_Users";
+            this.Text = "Ranch_Users";
             this.Load += new System.EventHandler(this.frmUsers_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ranchUsersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ranchUsersDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class RanchDatabase : Form
     {
-        public Form1()
+        public RanchDatabase()
         {
             InitializeComponent();
         }
@@ -69,8 +69,14 @@ namespace WindowsFormsApp1
 
         private void UsersForm_Click(object sender, EventArgs e)
         {
-            frmUsers NewUserForm = new frmUsers();
+            Ranch_Users NewUserForm = new Ranch_Users();
             NewUserForm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmAnimals NewAnimalForm = new frmAnimals();
+            NewAnimalForm.Show();
         }
     }
 }

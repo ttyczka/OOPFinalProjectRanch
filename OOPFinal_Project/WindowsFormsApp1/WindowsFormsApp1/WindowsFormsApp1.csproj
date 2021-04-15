@@ -47,17 +47,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bed.Designer.cs">
+      <DependentUpon>Bed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feed.Designer.cs">
+      <DependentUpon>Feed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileProcessor.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAnimals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnimals.Designer.cs">
+      <DependentUpon>frmAnimals.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lowInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lowInventory.Designer.cs">
+      <DependentUpon>lowInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mineral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mineral.Designer.cs">
+      <DependentUpon>Mineral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mineral_Tub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mineral_Tub.Designer.cs">
+      <DependentUpon>Mineral_Tub.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,11 +103,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RanchUsersDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ranch_Animal_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ranch_Animal_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Work_With_Animals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Work_With_Animals.Designer.cs">
+      <DependentUpon>Work_With_Animals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WWADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WWADataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bed.resx">
+      <DependentUpon>Bed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed.resx">
+      <DependentUpon>Feed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAnimals.resx">
+      <DependentUpon>frmAnimals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lowInventory.resx">
+      <DependentUpon>lowInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mineral.resx">
+      <DependentUpon>Mineral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mineral_Tub.resx">
+      <DependentUpon>Mineral_Tub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +152,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Work_With_Animals.resx">
+      <DependentUpon>Work_With_Animals.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +174,28 @@
     </None>
     <None Include="RanchUsersDataSet.xss">
       <DependentUpon>RanchUsersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Ranch_Animal_DataSet.xsc">
+      <DependentUpon>Ranch_Animal_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Ranch_Animal_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ranch_Animal_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ranch_Animal_DataSet.xss">
+      <DependentUpon>Ranch_Animal_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WWADataSet.xsc">
+      <DependentUpon>WWADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WWADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WWADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WWADataSet.xss">
+      <DependentUpon>WWADataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

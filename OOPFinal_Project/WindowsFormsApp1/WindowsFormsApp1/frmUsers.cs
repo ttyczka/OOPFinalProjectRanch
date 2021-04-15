@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class frmUsers : Form
+    public partial class Ranch_Users : Form
     {
-        public frmUsers()
+        public Ranch_Users()
         {
             InitializeComponent();
         }
@@ -50,6 +50,11 @@ namespace WindowsFormsApp1
                 }
             }
             this.usersTableAdapter.Fill(this.ranchUsersDataSet.Users);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
