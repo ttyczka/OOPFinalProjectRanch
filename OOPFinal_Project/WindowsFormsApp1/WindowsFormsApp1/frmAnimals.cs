@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class frmAnimals : Form
+    public partial class Animal_Inventory : Form
     {
-        public frmAnimals()
+        public Animal_Inventory()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
                 CheckFileExists = true,
                 CheckPathExists = true,
 
-               // DefaultExt = "txt",
+                // DefaultExt = "txt",
                 //Filter = "PNG files (*.png)|*.png",
                 //FilterIndex = 2,
                 RestoreDirectory = true,
@@ -49,13 +49,32 @@ namespace WindowsFormsApp1
             }
 
         }
-        private bool validateForm() 
+        private bool TestValue(string valuetest)
+        {
+            bool resultstatus = false;
+            try
+            {
+                string teststring;
+                teststring = valuetest;
+                if (teststring.Length > 0)
+                {
+                    resultstatus = true;
+                }
+            }
+            catch
+            {
+                resultstatus = false;
+            }
+            return resultstatus;
+        }
+        private bool validateForm()
         {
             bool isformvalid = true;
-            if (txttagID.Text != null) { isformvalid = true; } else { isformvalid = false; MessageBox.Show("Missing Animal TagId");}
-            if (txtspecies.Text != null) { isformvalid = true;} else { isformvalid = false; MessageBox.Show("Missing Animal Species");}
-            if (txtbreed.Text != null) { isformvalid = true;} else { isformvalid = false; MessageBox.Show("Missing Animal Breed");}
-            if (txtsex.Text != null) { isformvalid = true; } else { isformvalid = false; MessageBox.Show("Missing Animal Sex");}
+            if (TestValue(txttagID.Text)) { } else { isformvalid = false; MessageBox.Show("Missing Animal TagId"); }
+            if (TestValue(txtspecies.Text)) { } else { isformvalid = false; MessageBox.Show("Missing Animal Species"); }
+            if (TestValue(txtbreed.Text)) { } else { isformvalid = false; MessageBox.Show("Missing Animal Breed"); }
+            if (TestValue(txtsex.Text)) { } else { isformvalid = false; MessageBox.Show("Missing Animal Sex"); }
+            if (TestValue(dtpdob.Value.ToString())) { } else { isformvalid = false; MessageBox.Show("Missing Date"); }
             return isformvalid;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -67,12 +86,12 @@ namespace WindowsFormsApp1
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "INSERT Ranch_Animal([tagID], [animal_name], [birthdate], [species], [breed], [sex], [photo]) VALUES (@tagID, @animal_name, @birthdate, @species, @breed, @sex, @photo)";
+                    cmd.CommandText = "INSERT Ranch_Animal([tagID], [animal_name], [arrival_date], [species], [breed], [sex], [photo]) VALUES (@tagID, @animal_name, @arrival_date, @species, @breed, @sex, @photo)";
                     cmd.Parameters.Add("@tagID", SqlDbType.NVarChar).Value = txttagID.Text;
                     cmd.Parameters.Add("@animal_name", SqlDbType.NVarChar).Value = txtanimal_name.Text;
-                    cmd.Parameters.Add("@birthdate", SqlDbType.Date).Value = dtpdob.Value;
+                    cmd.Parameters.Add("@arrival_date", SqlDbType.Date).Value = dtpdob.Value;
                     cmd.Parameters.Add("@species", SqlDbType.NVarChar).Value = txtspecies.Text;
-                    cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text; 
+                    cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text;
                     cmd.Parameters.Add("@sex", SqlDbType.NVarChar).Value = txtsex.Text;
                     cmd.Parameters.Add("@health_concerns", SqlDbType.Date).Value = txthealth_concerns.Text;
                     cmd.Parameters.Add("@Photo", SqlDbType.VarBinary).Value = FileProcessor.GetBytesFromFile(txtphoto.Text);
@@ -97,7 +116,7 @@ namespace WindowsFormsApp1
 
         }
 
-     
+
 
         private void btnARemove_Click(object sender, EventArgs e)
         {
@@ -128,23 +147,23 @@ namespace WindowsFormsApp1
                 DataGridViewRow row = dataGridView1.Rows[rowindex];
                 string tagID = row.Cells[0].Value.ToString();
                 string animal_name = row.Cells[1].Value.ToString();
-                string birthdate = row.Cells[2].Value.ToString();
+                string arrival_date = row.Cells[2].Value.ToString();
                 string species = row.Cells[3].Value.ToString();
                 string breed = row.Cells[4].Value.ToString();
                 string sex = row.Cells[5].Value.ToString();
                 string health_concerns = row.Cells[6].Value.ToString();
                 string photo = row.Cells[7].Value.ToString();
                 string status = row.Cells[8].Value.ToString();
-            //Add more
+                //Add more
                 txttagID.Text = tagID;
                 txtanimal_name.Text = animal_name;
-                dtpdob.Value = DateTime.Parse(birthdate);
+                dtpdob.Value = DateTime.Parse(arrival_date);
                 txtspecies.Text = species;
                 txtbreed.Text = breed;
                 txtsex.Text = sex;
                 txthealth_concerns.Text = health_concerns;
                 txtphoto.Text = photo;
-                
+
 
                 button2.Text = "Save Changes";
             }
@@ -158,25 +177,28 @@ namespace WindowsFormsApp1
                         //feild =@feild,
                         if (txtphoto.Text.Length < 1)
                         {
+                            //add each feild to update statment 
+                            //cmd.CommandText = "UPDATE Bedding_Inventory SET animal_name=@animal_name, WHERE bedID=@bedID";
                             //Update statment without photo
                             cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, WHERE tagID=@tagID";
-                            
+
                         }
                         else
-                        {
-                            //Update statment with photo
+                        {//add each feild to update statment 
+                         //cmd.CommandText = "UPDATE Bedding_Inventory SET animal_name=@animal_name, WHERE bedID=@bedID";
+                         //Update statment with photo
                             cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, WHERE tagID=@tagID";
                             cmd.Parameters.Add("@Photo", SqlDbType.VarBinary).Value = FileProcessor.GetBytesFromFile(txtphoto.Text);
                         }
-                        
+
                         cmd.Parameters.Add("@tagID", SqlDbType.NVarChar).Value = txttagID.Text;
                         cmd.Parameters.Add("@animal_name", SqlDbType.NVarChar).Value = txtanimal_name.Text;
-                        cmd.Parameters.Add("@birthdate", SqlDbType.Date).Value = dtpdob.Value;
+                        cmd.Parameters.Add("@arrival_date", SqlDbType.Date).Value = dtpdob.Value;
                         cmd.Parameters.Add("@species", SqlDbType.NVarChar).Value = txtspecies.Text;
                         cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text;
                         cmd.Parameters.Add("@sex", SqlDbType.NVarChar).Value = txtsex.Text;
                         cmd.Parameters.Add("@health_concerns", SqlDbType.Date).Value = txthealth_concerns.Text;
-                        
+
                         cmd.Connection = conn;
                         conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -186,12 +208,23 @@ namespace WindowsFormsApp1
                 this.ranch_AnimalTableAdapter.Fill(this.ranch_Animal_DataSet.Ranch_Animal);
                 button2.Text = "Edit";
             }
-         
+
         }
 
         private void txtspecies_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BacktoMain_Click(object sender, EventArgs e)
+        {
+            RanchDatabase RanchDatabaseForm = new RanchDatabase();
+            RanchDatabaseForm.Show();
+        } }
     }
-}
+

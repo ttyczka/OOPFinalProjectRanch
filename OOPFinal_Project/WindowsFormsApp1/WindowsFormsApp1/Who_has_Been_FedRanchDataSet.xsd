@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Who_has_Been_FedRanchDataSet" targetNamespace="http://tempuri.org/Who_has_Been_FedRanchDataSet.xsd" xmlns:mstns="http://tempuri.org/Who_has_Been_FedRanchDataSet.xsd" xmlns="http://tempuri.org/Who_has_Been_FedRanchDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RanchConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RanchConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.RanchConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Who_has_Been_Fed_ViewTableAdapter" GeneratorDataComponentClassName="Who_has_Been_Fed_ViewTableAdapter" Name="Who_has_Been_Fed_View" UserDataComponentName="Who_has_Been_Fed_ViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RanchConnectionString (Settings)" DbObjectName="Ranch.dbo.Who_has_Been_Fed_View" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT species, type, quantity, unit FROM dbo.Who_has_Been_Fed_View</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="species" DataSetColumn="species" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Who_has_Been_FedRanchDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Who_has_Been_FedRanchDataSet" msprop:Generator_UserDSName="Who_has_Been_FedRanchDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Who_has_Been_Fed_View" msprop:Generator_TableClassName="Who_has_Been_Fed_ViewDataTable" msprop:Generator_TableVarName="tableWho_has_Been_Fed_View" msprop:Generator_TablePropName="Who_has_Been_Fed_View" msprop:Generator_RowDeletingName="Who_has_Been_Fed_ViewRowDeleting" msprop:Generator_RowChangingName="Who_has_Been_Fed_ViewRowChanging" msprop:Generator_RowEvHandlerName="Who_has_Been_Fed_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Who_has_Been_Fed_ViewRowDeleted" msprop:Generator_UserTableName="Who_has_Been_Fed_View" msprop:Generator_RowChangedName="Who_has_Been_Fed_ViewRowChanged" msprop:Generator_RowEvArgName="Who_has_Been_Fed_ViewRowChangeEvent" msprop:Generator_RowClassName="Who_has_Been_Fed_ViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="species" msprop:Generator_ColumnVarNameInTable="columnspecies" msprop:Generator_ColumnPropNameInRow="species" msprop:Generator_ColumnPropNameInTable="speciesColumn" msprop:Generator_UserColumnName="species">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:int" />
+              <xs:element name="unit" msprop:Generator_ColumnVarNameInTable="columnunit" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_UserColumnName="unit">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

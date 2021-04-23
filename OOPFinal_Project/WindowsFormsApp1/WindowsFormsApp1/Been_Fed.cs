@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class lowInventory : Form
+    public partial class Who_Has_Been_Fed : Form
     {
-        public lowInventory()
+        public Who_Has_Been_Fed()
         {
             InitializeComponent();
         }
@@ -23,10 +23,10 @@ namespace WindowsFormsApp1
             RanchDatabaseForm.Show();
         }
 
-        private void lowInventory_Load(object sender, EventArgs e)
+        private void Who_Has_Been_Fed_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'low_Inventory_RanchDataSet.Low_Inventory_View' table. You can move, or remove it, as needed.
-            this.low_Inventory_ViewTableAdapter.Fill(this.low_Inventory_RanchDataSet.Low_Inventory_View);
+            // TODO: This line of code loads data into the 'who_has_Been_FedRanchDataSet.Who_has_Been_Fed_View' table. You can move, or remove it, as needed.
+            this.who_has_Been_Fed_ViewTableAdapter.Fill(this.who_has_Been_FedRanchDataSet.Who_has_Been_Fed_View);
 
         }
     }

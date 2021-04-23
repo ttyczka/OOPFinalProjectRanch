@@ -28,39 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mineral));
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.dgvWWA = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.dgvMTB = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lbBed = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.tbRecommended_Distribution_Rate = new System.Windows.Forms.TextBox();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.cbMineral_Name = new System.Windows.Forms.ComboBox();
+            this.tbquantity = new System.Windows.Forms.TextBox();
             this.UserPassword = new System.Windows.Forms.Label();
             this.LastName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DateCreated = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Cows = new System.Windows.Forms.CheckedListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).BeginInit();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbSize = new System.Windows.Forms.ComboBox();
+            this.mineral_TubRanchDataSet = new WindowsFormsApp1.Mineral_TubRanchDataSet();
+            this.mineralTubInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mineral_Tub_InventoryTableAdapter = new WindowsFormsApp1.Mineral_TubRanchDataSetTableAdapters.Mineral_Tub_InventoryTableAdapter();
+            this.minIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mineralnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recommendedditributionrateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMTB)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineral_TubRanchDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineralTubInventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(676, 369);
+            this.button2.Location = new System.Drawing.Point(3, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 42;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -78,40 +94,43 @@
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 40;
             // 
-            // dgvWWA
+            // dgvMTB
             // 
-            this.dgvWWA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWWA.Location = new System.Drawing.Point(21, 284);
-            this.dgvWWA.Name = "dgvWWA";
-            this.dgvWWA.Size = new System.Drawing.Size(476, 150);
-            this.dgvWWA.TabIndex = 39;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(615, 411);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 38;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.dgvMTB.AutoGenerateColumns = false;
+            this.dgvMTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMTB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.minIDDataGridViewTextBoxColumn,
+            this.mineralnameDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.sizeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.recommendedditributionrateDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn});
+            this.dgvMTB.DataSource = this.mineralTubInventoryBindingSource;
+            this.dgvMTB.Location = new System.Drawing.Point(21, 338);
+            this.dgvMTB.Name = "dgvMTB";
+            this.dgvMTB.Size = new System.Drawing.Size(743, 222);
+            this.dgvMTB.TabIndex = 39;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(709, 411);
+            this.button1.Location = new System.Drawing.Point(3, 126);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 37;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(521, 411);
+            this.btnSubmit.Location = new System.Drawing.Point(3, 3);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 36;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lbBed
             // 
@@ -128,51 +147,71 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtLastname, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbRecommended_Distribution_Rate, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbPrice, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbMineral_Name, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbquantity, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.UserPassword, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LastName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.DateCreated, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Cows, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 45);
+            this.tableLayoutPanel1.Controls.Add(this.DateCreated, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbSize, 1, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 67);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(459, 233);
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(467, 246);
             this.tableLayoutPanel1.TabIndex = 34;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // textBox3
+            // tbRecommended_Distribution_Rate
             // 
-            this.textBox3.Location = new System.Drawing.Point(155, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(299, 20);
-            this.textBox3.TabIndex = 25;
+            this.tbRecommended_Distribution_Rate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbRecommended_Distribution_Rate.Location = new System.Drawing.Point(158, 199);
+            this.tbRecommended_Distribution_Rate.Name = "tbRecommended_Distribution_Rate";
+            this.tbRecommended_Distribution_Rate.Size = new System.Drawing.Size(306, 20);
+            this.tbRecommended_Distribution_Rate.TabIndex = 48;
             // 
-            // txtLastname
+            // tbPrice
             // 
-            this.txtLastname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLastname.Location = new System.Drawing.Point(155, 41);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(301, 20);
-            this.txtLastname.TabIndex = 14;
+            this.tbPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbPrice.Location = new System.Drawing.Point(158, 150);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(306, 20);
+            this.tbPrice.TabIndex = 47;
+            // 
+            // cbMineral_Name
+            // 
+            this.cbMineral_Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbMineral_Name.FormattingEnabled = true;
+            this.cbMineral_Name.Items.AddRange(new object[] {
+            "Vitalix Inc. #7",
+            "Vitalix Inc. #3",
+            "Crystalyx Brigade"});
+            this.cbMineral_Name.Location = new System.Drawing.Point(158, 3);
+            this.cbMineral_Name.Name = "cbMineral_Name";
+            this.cbMineral_Name.Size = new System.Drawing.Size(306, 21);
+            this.cbMineral_Name.TabIndex = 43;
+            // 
+            // tbquantity
+            // 
+            this.tbquantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbquantity.Location = new System.Drawing.Point(158, 52);
+            this.tbquantity.Name = "tbquantity";
+            this.tbquantity.Size = new System.Drawing.Size(306, 20);
+            this.tbquantity.TabIndex = 14;
             // 
             // UserPassword
             // 
             this.UserPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.UserPassword.AutoSize = true;
-            this.UserPassword.Location = new System.Drawing.Point(77, 12);
+            this.UserPassword.Location = new System.Drawing.Point(80, 18);
             this.UserPassword.Name = "UserPassword";
             this.UserPassword.Size = new System.Drawing.Size(72, 13);
             this.UserPassword.TabIndex = 2;
@@ -182,17 +221,27 @@
             // 
             this.LastName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LastName.AutoSize = true;
-            this.LastName.Location = new System.Drawing.Point(103, 50);
+            this.LastName.Location = new System.Drawing.Point(106, 67);
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(46, 13);
             this.LastName.TabIndex = 6;
             this.LastName.Text = "Quantity";
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(125, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Size";
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 126);
+            this.label1.Location = new System.Drawing.Point(121, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 16;
@@ -202,95 +251,132 @@
             // 
             this.DateCreated.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.DateCreated.AutoSize = true;
-            this.DateCreated.Location = new System.Drawing.Point(12, 198);
+            this.DateCreated.Location = new System.Drawing.Point(15, 208);
             this.DateCreated.Name = "DateCreated";
             this.DateCreated.Size = new System.Drawing.Size(137, 26);
             this.DateCreated.TabIndex = 10;
             this.DateCreated.Text = "Recommended Distribution Rate";
             this.DateCreated.Click += new System.EventHandler(this.DateCreated_Click);
             // 
-            // label2
+            // tableLayoutPanel2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Species List";
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.btnSubmit, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(780, 366);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(85, 167);
+            this.tableLayoutPanel2.TabIndex = 46;
             // 
-            // comboBox1
+            // pictureBox1
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Vitalix Inc. #7",
-            "Vitalix Inc. #3",
-            "Crystalyx Brigade"});
-            this.comboBox1.Location = new System.Drawing.Point(155, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(301, 21);
-            this.comboBox1.TabIndex = 43;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(519, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(327, 257);
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
             // 
-            // Cows
+            // cbSize
             // 
-            this.Cows.FormattingEnabled = true;
-            this.Cows.Items.AddRange(new object[] {
-            "Cows",
-            "Horses",
-            "Calfs",
-            "Bulls"});
-            this.Cows.Location = new System.Drawing.Point(155, 155);
-            this.Cows.Name = "Cows";
-            this.Cows.Size = new System.Drawing.Size(147, 19);
-            this.Cows.TabIndex = 44;
-            this.Cows.SelectedIndexChanged += new System.EventHandler(this.Cows_SelectedIndexChanged);
+            this.cbSize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbSize.FormattingEnabled = true;
+            this.cbSize.Items.AddRange(new object[] {
+            "Small Black Tub",
+            "200 lb. Tub"});
+            this.cbSize.Location = new System.Drawing.Point(158, 101);
+            this.cbSize.Name = "cbSize";
+            this.cbSize.Size = new System.Drawing.Size(306, 21);
+            this.cbSize.TabIndex = 49;
             // 
-            // label3
+            // mineral_TubRanchDataSet
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Size";
+            this.mineral_TubRanchDataSet.DataSetName = "Mineral_TubRanchDataSet";
+            this.mineral_TubRanchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox2
+            // mineralTubInventoryBindingSource
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Location = new System.Drawing.Point(155, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 20);
-            this.textBox2.TabIndex = 47;
+            this.mineralTubInventoryBindingSource.DataMember = "Mineral_Tub_Inventory";
+            this.mineralTubInventoryBindingSource.DataSource = this.mineral_TubRanchDataSet;
             // 
-            // textBox1
+            // mineral_Tub_InventoryTableAdapter
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(155, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 20);
-            this.textBox1.TabIndex = 48;
+            this.mineral_Tub_InventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // minIDDataGridViewTextBoxColumn
+            // 
+            this.minIDDataGridViewTextBoxColumn.DataPropertyName = "minID";
+            this.minIDDataGridViewTextBoxColumn.HeaderText = "minID";
+            this.minIDDataGridViewTextBoxColumn.Name = "minIDDataGridViewTextBoxColumn";
+            this.minIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mineralnameDataGridViewTextBoxColumn
+            // 
+            this.mineralnameDataGridViewTextBoxColumn.DataPropertyName = "Mineral_name";
+            this.mineralnameDataGridViewTextBoxColumn.HeaderText = "Mineral_name";
+            this.mineralnameDataGridViewTextBoxColumn.Name = "mineralnameDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // sizeDataGridViewTextBoxColumn
+            // 
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // recommendedditributionrateDataGridViewTextBoxColumn
+            // 
+            this.recommendedditributionrateDataGridViewTextBoxColumn.DataPropertyName = "Recommended_ditribution_rate";
+            this.recommendedditributionrateDataGridViewTextBoxColumn.HeaderText = "Recommended_ditribution_rate";
+            this.recommendedditributionrateDataGridViewTextBoxColumn.Name = "recommendedditributionrateDataGridViewTextBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
             // Mineral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(881, 572);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.dgvWWA);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.dgvMTB);
             this.Controls.Add(this.lbBed);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mineral";
-            this.Text = "Mineral";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).EndInit();
+            this.Text = "Mineral Tub Inventory";
+            this.Load += new System.EventHandler(this.Mineral_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMTB)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineral_TubRanchDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineralTubInventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,23 +387,32 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.DataGridView dgvWWA;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridView dgvMTB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lbBed;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtLastname;
+        private System.Windows.Forms.TextBox tbquantity;
         private System.Windows.Forms.Label UserPassword;
         private System.Windows.Forms.Label LastName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DateCreated;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckedListBox Cows;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbMineral_Name;
+        private System.Windows.Forms.TextBox tbPrice;
+        private System.Windows.Forms.TextBox tbRecommended_Distribution_Rate;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbSize;
+        private Mineral_TubRanchDataSet mineral_TubRanchDataSet;
+        private System.Windows.Forms.BindingSource mineralTubInventoryBindingSource;
+        private Mineral_TubRanchDataSetTableAdapters.Mineral_Tub_InventoryTableAdapter mineral_Tub_InventoryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mineralnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recommendedditributionrateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
     }
 }

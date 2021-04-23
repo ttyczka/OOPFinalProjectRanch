@@ -75,8 +75,44 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmAnimals NewAnimalForm = new frmAnimals();
+            Animal_Inventory NewAnimalForm = new Animal_Inventory();
             NewAnimalForm.Show();
+        }
+
+        private void WorkWithAnimals_Click(object sender, EventArgs e)
+        {
+            Work_With_Animals Work_With_AnimalsForm = new Work_With_Animals();
+            Work_With_AnimalsForm.Show();
+        }
+
+        private void food_Click(object sender, EventArgs e)
+        {
+            Feed Feed_Inventory_Form = new Feed();
+            Feed_Inventory_Form.Show();
+        }
+
+        private void Bed_Click(object sender, EventArgs e)
+        {
+            Bed Bed_Inventory_Form = new Bed();
+            Bed_Inventory_Form.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Mineral Mineral_Inventory_Form = new Mineral();
+            Mineral_Inventory_Form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lowInventory Low_Inventory_Form = new lowInventory();
+            Low_Inventory_Form.Show();
+        }
+
+        private void btnWho_Has_Been_Fed_Click(object sender, EventArgs e)
+        {
+            Who_Has_Been_Fed Who_Has_Been_Fed_Form = new Who_Has_Been_Fed();
+            Who_Has_Been_Fed_Form.Show();
         }
     }
 }

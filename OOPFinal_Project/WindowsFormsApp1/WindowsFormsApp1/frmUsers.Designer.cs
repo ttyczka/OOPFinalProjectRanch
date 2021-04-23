@@ -245,7 +245,7 @@
             // 
             // addUser
             // 
-            this.addUser.Location = new System.Drawing.Point(153, 304);
+            this.addUser.Location = new System.Drawing.Point(814, 480);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(75, 23);
             this.addUser.TabIndex = 7;

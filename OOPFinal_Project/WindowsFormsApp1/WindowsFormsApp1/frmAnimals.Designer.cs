@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class frmAnimals
+    partial class Animal_Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnimals));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Animal_Inventory));
             this.BacktoMain = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.txtbreed = new System.Windows.Forms.TextBox();
             this.txtspecies = new System.Windows.Forms.TextBox();
             this.txtanimal_name = new System.Windows.Forms.TextBox();
-            this.Birth_Date = new System.Windows.Forms.Label();
+            this.arrival_date = new System.Windows.Forms.Label();
             this.Sex = new System.Windows.Forms.Label();
             this.dtpdob = new System.Windows.Forms.DateTimePicker();
             this.Species = new System.Windows.Forms.Label();
@@ -48,7 +48,6 @@
             this.txtphoto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txthealth_concerns = new System.Windows.Forms.TextBox();
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnbrowse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -65,22 +64,26 @@
             this.ranch_AnimalTableAdapter = new WindowsFormsApp1.Ranch_Animal_DataSetTableAdapters.Ranch_AnimalTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.btnARemove = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lbBed = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranchAnimalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranch_Animal_DataSet)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BacktoMain
             // 
-            this.BacktoMain.Location = new System.Drawing.Point(881, 537);
+            this.BacktoMain.Location = new System.Drawing.Point(3, 126);
             this.BacktoMain.Name = "BacktoMain";
             this.BacktoMain.Size = new System.Drawing.Size(75, 23);
             this.BacktoMain.TabIndex = 11;
             this.BacktoMain.Text = "Back";
             this.BacktoMain.UseVisualStyleBackColor = true;
+            this.BacktoMain.Click += new System.EventHandler(this.BacktoMain_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -92,7 +95,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtbreed, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtspecies, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtanimal_name, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Birth_Date, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.arrival_date, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.Sex, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.dtpdob, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.Species, 0, 2);
@@ -114,23 +117,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 265);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 274);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 241);
+            this.label2.Location = new System.Drawing.Point(38, 249);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Health Concerns:";
+            this.label2.Text = "Health Concerns";
             // 
             // txtsex
             // 
             this.txtsex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtsex.Location = new System.Drawing.Point(130, 135);
+            this.txtsex.Location = new System.Drawing.Point(130, 139);
             this.txtsex.Name = "txtsex";
             this.txtsex.Size = new System.Drawing.Size(248, 20);
             this.txtsex.TabIndex = 15;
@@ -138,7 +141,7 @@
             // txtbreed
             // 
             this.txtbreed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbreed.Location = new System.Drawing.Point(130, 102);
+            this.txtbreed.Location = new System.Drawing.Point(130, 105);
             this.txtbreed.Name = "txtbreed";
             this.txtbreed.Size = new System.Drawing.Size(248, 20);
             this.txtbreed.TabIndex = 14;
@@ -146,7 +149,7 @@
             // txtspecies
             // 
             this.txtspecies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtspecies.Location = new System.Drawing.Point(130, 69);
+            this.txtspecies.Location = new System.Drawing.Point(130, 71);
             this.txtspecies.Name = "txtspecies";
             this.txtspecies.Size = new System.Drawing.Size(248, 20);
             this.txtspecies.TabIndex = 13;
@@ -155,35 +158,35 @@
             // txtanimal_name
             // 
             this.txtanimal_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtanimal_name.Location = new System.Drawing.Point(130, 36);
+            this.txtanimal_name.Location = new System.Drawing.Point(130, 37);
             this.txtanimal_name.Name = "txtanimal_name";
             this.txtanimal_name.Size = new System.Drawing.Size(248, 20);
             this.txtanimal_name.TabIndex = 12;
             // 
-            // Birth_Date
+            // arrival_date
             // 
-            this.Birth_Date.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Birth_Date.AutoSize = true;
-            this.Birth_Date.Location = new System.Drawing.Point(67, 175);
-            this.Birth_Date.Name = "Birth_Date";
-            this.Birth_Date.Size = new System.Drawing.Size(57, 13);
-            this.Birth_Date.TabIndex = 10;
-            this.Birth_Date.Text = "Birth Date:";
+            this.arrival_date.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.arrival_date.AutoSize = true;
+            this.arrival_date.Location = new System.Drawing.Point(62, 180);
+            this.arrival_date.Name = "arrival_date";
+            this.arrival_date.Size = new System.Drawing.Size(62, 13);
+            this.arrival_date.TabIndex = 10;
+            this.arrival_date.Text = "Arrival Date";
             // 
             // Sex
             // 
             this.Sex.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Sex.AutoSize = true;
-            this.Sex.Location = new System.Drawing.Point(96, 142);
+            this.Sex.Location = new System.Drawing.Point(99, 146);
             this.Sex.Name = "Sex";
-            this.Sex.Size = new System.Drawing.Size(28, 13);
+            this.Sex.Size = new System.Drawing.Size(25, 13);
             this.Sex.TabIndex = 8;
-            this.Sex.Text = "Sex:";
+            this.Sex.Text = "Sex";
             // 
             // dtpdob
             // 
             this.dtpdob.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpdob.Location = new System.Drawing.Point(130, 168);
+            this.dtpdob.Location = new System.Drawing.Point(130, 173);
             this.dtpdob.Name = "dtpdob";
             this.dtpdob.Size = new System.Drawing.Size(248, 20);
             this.dtpdob.TabIndex = 1;
@@ -192,31 +195,31 @@
             // 
             this.Species.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Species.AutoSize = true;
-            this.Species.Location = new System.Drawing.Point(76, 76);
+            this.Species.Location = new System.Drawing.Point(79, 78);
             this.Species.Name = "Species";
-            this.Species.Size = new System.Drawing.Size(48, 13);
+            this.Species.Size = new System.Drawing.Size(45, 13);
             this.Species.TabIndex = 4;
-            this.Species.Text = "Species:";
+            this.Species.Text = "Species";
             // 
             // Animal_Name
             // 
             this.Animal_Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Animal_Name.AutoSize = true;
-            this.Animal_Name.Location = new System.Drawing.Point(52, 43);
+            this.Animal_Name.Location = new System.Drawing.Point(55, 44);
             this.Animal_Name.Name = "Animal_Name";
-            this.Animal_Name.Size = new System.Drawing.Size(72, 13);
+            this.Animal_Name.Size = new System.Drawing.Size(69, 13);
             this.Animal_Name.TabIndex = 2;
-            this.Animal_Name.Text = "Animal Name:";
+            this.Animal_Name.Text = "Animal Name";
             // 
             // TagID
             // 
             this.TagID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TagID.AutoSize = true;
-            this.TagID.Location = new System.Drawing.Point(84, 10);
+            this.TagID.Location = new System.Drawing.Point(87, 10);
             this.TagID.Name = "TagID";
-            this.TagID.Size = new System.Drawing.Size(40, 13);
+            this.TagID.Size = new System.Drawing.Size(37, 13);
             this.TagID.TabIndex = 0;
-            this.TagID.Text = "TagID:";
+            this.TagID.Text = "TagID";
             // 
             // txttagID
             // 
@@ -230,16 +233,16 @@
             // 
             this.breed.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.breed.AutoSize = true;
-            this.breed.Location = new System.Drawing.Point(86, 109);
+            this.breed.Location = new System.Drawing.Point(89, 112);
             this.breed.Name = "breed";
-            this.breed.Size = new System.Drawing.Size(38, 13);
+            this.breed.Size = new System.Drawing.Size(35, 13);
             this.breed.TabIndex = 6;
-            this.breed.Text = "Breed:";
+            this.breed.Text = "Breed";
             // 
             // txtphoto
             // 
             this.txtphoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtphoto.Location = new System.Drawing.Point(130, 201);
+            this.txtphoto.Location = new System.Drawing.Point(130, 207);
             this.txtphoto.Name = "txtphoto";
             this.txtphoto.Size = new System.Drawing.Size(248, 20);
             this.txtphoto.TabIndex = 17;
@@ -248,35 +251,24 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 208);
+            this.label1.Location = new System.Drawing.Point(89, 214);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Photo:";
+            this.label1.Text = "Photo";
             // 
             // txthealth_concerns
             // 
             this.txthealth_concerns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txthealth_concerns.Location = new System.Drawing.Point(130, 234);
+            this.txthealth_concerns.Location = new System.Drawing.Point(130, 241);
             this.txthealth_concerns.Name = "txthealth_concerns";
             this.txthealth_concerns.Size = new System.Drawing.Size(248, 20);
             this.txthealth_concerns.TabIndex = 19;
             this.txthealth_concerns.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Logo
-            // 
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(623, 65);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(253, 253);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Logo.TabIndex = 9;
-            this.Logo.TabStop = false;
-            this.Logo.Click += new System.EventHandler(this.Logo_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(882, 373);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -286,7 +278,7 @@
             // 
             // btnbrowse
             // 
-            this.btnbrowse.Location = new System.Drawing.Point(414, 254);
+            this.btnbrowse.Location = new System.Drawing.Point(414, 264);
             this.btnbrowse.Name = "btnbrowse";
             this.btnbrowse.Size = new System.Drawing.Size(75, 23);
             this.btnbrowse.TabIndex = 12;
@@ -308,10 +300,11 @@
             this.healthconcernsDataGridViewTextBoxColumn,
             this.photoDataGridViewImageColumn});
             this.dataGridView1.DataSource = this.ranchAnimalBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 347);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 347);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(846, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 213);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tagIDDataGridViewTextBoxColumn
             // 
@@ -377,7 +370,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(882, 464);
+            this.button2.Location = new System.Drawing.Point(3, 44);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
@@ -387,13 +380,32 @@
             // 
             // btnARemove
             // 
-            this.btnARemove.Location = new System.Drawing.Point(881, 416);
+            this.btnARemove.Location = new System.Drawing.Point(3, 85);
             this.btnARemove.Name = "btnARemove";
             this.btnARemove.Size = new System.Drawing.Size(75, 23);
             this.btnARemove.TabIndex = 15;
             this.btnARemove.Text = "Remove";
             this.btnARemove.UseVisualStyleBackColor = true;
             this.btnARemove.Click += new System.EventHandler(this.btnARemove_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.BacktoMain, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnARemove, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(873, 374);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(85, 167);
+            this.tableLayoutPanel2.TabIndex = 45;
             // 
             // lbBed
             // 
@@ -405,29 +417,37 @@
             this.lbBed.TabIndex = 26;
             this.lbBed.Text = "Animal Inventory";
             // 
-            // frmAnimals
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(584, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(283, 311);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Animal_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 611);
+            this.ClientSize = new System.Drawing.Size(973, 572);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.lbBed);
-            this.Controls.Add(this.btnARemove);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnbrowse);
-            this.Controls.Add(this.BacktoMain);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.Logo);
-            this.Controls.Add(this.button1);
-            this.Name = "frmAnimals";
-            this.Text = "frmAnimals";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Animal_Inventory";
+            this.Text = "Animal Inventory";
             this.Load += new System.EventHandler(this.frmAnimals_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranchAnimalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranch_Animal_DataSet)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,7 +460,7 @@
         private System.Windows.Forms.TextBox txtbreed;
         private System.Windows.Forms.TextBox txtspecies;
         private System.Windows.Forms.TextBox txtanimal_name;
-        private System.Windows.Forms.Label Birth_Date;
+        private System.Windows.Forms.Label arrival_date;
         private System.Windows.Forms.Label Sex;
         private System.Windows.Forms.DateTimePicker dtpdob;
         private System.Windows.Forms.Label Species;
@@ -448,7 +468,6 @@
         private System.Windows.Forms.Label TagID;
         private System.Windows.Forms.TextBox txttagID;
         private System.Windows.Forms.Label breed;
-        private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtphoto;
         private System.Windows.Forms.Button btnbrowse;
@@ -469,6 +488,8 @@
         private System.Windows.Forms.TextBox txthealth_concerns;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnARemove;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lbBed;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
