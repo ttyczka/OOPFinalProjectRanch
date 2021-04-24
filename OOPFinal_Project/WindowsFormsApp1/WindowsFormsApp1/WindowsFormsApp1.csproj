@@ -47,11 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimalRanchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnimalRanchDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Animals_With_ArrivalDateRanchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Animals_With_ArrivalDateRanchDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bed.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bed.Designer.cs">
       <DependentUpon>Bed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bedding_Quantity_RanchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bedding_Quantity_RanchDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BedRanchDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,12 +103,6 @@
     <Compile Include="frmAnimals.Designer.cs">
       <DependentUpon>frmAnimals.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsers.Designer.cs">
-      <DependentUpon>frmUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="lowInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +127,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RanchAnimalwithArrivalDateRanchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RanchAnimalwithArrivalDateRanchDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RanchUsersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,9 +173,6 @@
     <EmbeddedResource Include="frmAnimals.resx">
       <DependentUpon>frmAnimals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsers.resx">
-      <DependentUpon>frmUsers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="lowInventory.resx">
       <DependentUpon>lowInventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +191,39 @@
     <EmbeddedResource Include="Work_With_Animals.resx">
       <DependentUpon>Work_With_Animals.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AnimalRanchDataSet.xsc">
+      <DependentUpon>AnimalRanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AnimalRanchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnimalRanchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AnimalRanchDataSet.xss">
+      <DependentUpon>AnimalRanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Animals_With_ArrivalDateRanchDataSet.xsc">
+      <DependentUpon>Animals_With_ArrivalDateRanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Animals_With_ArrivalDateRanchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Animals_With_ArrivalDateRanchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Animals_With_ArrivalDateRanchDataSet.xss">
+      <DependentUpon>Animals_With_ArrivalDateRanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Bedding_Quantity_RanchDataSet.xsc">
+      <DependentUpon>Bedding_Quantity_RanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Bedding_Quantity_RanchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Bedding_Quantity_RanchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Bedding_Quantity_RanchDataSet.xss">
+      <DependentUpon>Bedding_Quantity_RanchDataSet.xsd</DependentUpon>
+    </None>
     <None Include="BedRanchDataSet.xsc">
       <DependentUpon>BedRanchDataSet.xsd</DependentUpon>
     </None>
@@ -233,6 +277,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RanchAnimalwithArrivalDateRanchDataSet.xsc">
+      <DependentUpon>RanchAnimalwithArrivalDateRanchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RanchAnimalwithArrivalDateRanchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RanchAnimalwithArrivalDateRanchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RanchAnimalwithArrivalDateRanchDataSet.xss">
+      <DependentUpon>RanchAnimalwithArrivalDateRanchDataSet.xsd</DependentUpon>
+    </None>
     <None Include="RanchUsersDataSet.xsc">
       <DependentUpon>RanchUsersDataSet.xsd</DependentUpon>
     </None>

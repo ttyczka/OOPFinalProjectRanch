@@ -478,6 +478,9 @@
         DS+DJr2GhpdBk15Dw8ugSa+h4WXQpNfQ8DLkuXHjBmnRosVb5Ab9H0Hx+4O51dF2AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="label2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAAAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAABEXAAARFwAAAAAAAAAA

@@ -36,8 +36,7 @@ namespace WindowsFormsApp1
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            RanchDatabase RanchDatabaseForm = new RanchDatabase();
-            RanchDatabaseForm.Show();
+            this.Close();
         }
 
         private bool TestValue(string valuetest)
@@ -94,11 +93,12 @@ namespace WindowsFormsApp1
                     cmd.Parameters.Add("@Feed_Type2", SqlDbType.NVarChar).Value = cbFood_Type.Text;
                     cmd.ExecuteNonQuery();
                 }
+                
 
             }
 
             this.feed_InventoryTableAdapter.Fill(this.feedRanchDataSet.Feed_Inventory);
-
+            MessageBox.Show("Feed added to inventroy. ");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,10 +116,10 @@ namespace WindowsFormsApp1
                     cmd.Connection = conn;
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Feed_Type=@Feed_Type";
+                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Feed_Type=@Feed_Type2";
                     int Quantity = int.Parse(txQuantity.Text);
                     cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = txQuantity.Text;
-                    cmd.Parameters.Add("@Feed_Type", SqlDbType.NVarChar).Value = cbFood_Type.Text;
+                    cmd.Parameters.Add("@Feed_Type2", SqlDbType.NVarChar).Value = cbFood_Type.Text;
                     cmd.ExecuteNonQuery();
                 }
 

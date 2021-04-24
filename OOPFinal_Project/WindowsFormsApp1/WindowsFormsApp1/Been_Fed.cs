@@ -19,14 +19,23 @@ namespace WindowsFormsApp1
 
         private void BacktoMain_Click(object sender, EventArgs e)
         {
-            RanchDatabase RanchDatabaseForm = new RanchDatabase();
-            RanchDatabaseForm.Show();
+            this.Close();
         }
 
         private void Who_Has_Been_Fed_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'who_has_Been_FedRanchDataSet.Who_has_Been_Fed_View' table. You can move, or remove it, as needed.
             this.who_has_Been_Fed_ViewTableAdapter.Fill(this.who_has_Been_FedRanchDataSet.Who_has_Been_Fed_View);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbBed_Click(object sender, EventArgs e)
+        {
 
         }
     }

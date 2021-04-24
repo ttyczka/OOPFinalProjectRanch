@@ -93,21 +93,22 @@ namespace WindowsFormsApp1
                     cmd.Parameters.Add("@species", SqlDbType.NVarChar).Value = txtspecies.Text;
                     cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text;
                     cmd.Parameters.Add("@sex", SqlDbType.NVarChar).Value = txtsex.Text;
-                    cmd.Parameters.Add("@health_concerns", SqlDbType.Date).Value = txthealth_concerns.Text;
+                    cmd.Parameters.Add("@health_concerns", SqlDbType.NVarChar).Value = txthealth_concerns.Text;
                     cmd.Parameters.Add("@Photo", SqlDbType.VarBinary).Value = FileProcessor.GetBytesFromFile(txtphoto.Text);
                     cmd.Connection = conn;
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }
-
+                MessageBox.Show("Animal Added");
             }
-            this.ranch_AnimalTableAdapter.Fill(this.ranch_Animal_DataSet.Ranch_Animal);
+            this.ranch_AnimalTableAdapter2.Fill(this.ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal);
         }
 
         private void frmAnimals_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ranch_Animal_DataSet.Ranch_Animal' table. You can move, or remove it, as needed.
-            this.ranch_AnimalTableAdapter.Fill(this.ranch_Animal_DataSet.Ranch_Animal);
+            // TODO: This line of code loads data into the 'ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal' table. You can move, or remove it, as needed.
+            this.ranch_AnimalTableAdapter2.Fill(this.ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal);
+
 
         }
 
@@ -117,7 +118,25 @@ namespace WindowsFormsApp1
         }
 
 
-
+        private void Delete_Click(object sender, EventArgs e)
+            {
+            int rowindex = dataGridView1.CurrentRow.Index;
+            DataGridViewRow row = dataGridView1.Rows[rowindex];
+            string tagID = row.Cells[0].Value.ToString();
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WindowsFormsApp1.Properties.Settings.RanchConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "DELETE FROM Ranch_Animal WHERE tagID=@tagID";
+                    cmd.Parameters.Add("@tagID", SqlDbType.NVarChar).Value = tagID;
+                    cmd.Connection = conn;
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            this.ranch_AnimalTableAdapter2.Fill(this.ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal);
+        }
         private void btnARemove_Click(object sender, EventArgs e)
         {
             int rowindex = dataGridView1.CurrentRow.Index;
@@ -136,80 +155,79 @@ namespace WindowsFormsApp1
                 }
 
             }
-            this.ranch_AnimalTableAdapter.Fill(this.ranch_Animal_DataSet.Ranch_Animal);
+            this.ranch_AnimalTableAdapter2.Fill(this.ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (button2.Text.Equals("Edit"))
-            {
-                int rowindex = dataGridView1.CurrentRow.Index;
-                DataGridViewRow row = dataGridView1.Rows[rowindex];
-                string tagID = row.Cells[0].Value.ToString();
-                string animal_name = row.Cells[1].Value.ToString();
-                string arrival_date = row.Cells[2].Value.ToString();
-                string species = row.Cells[3].Value.ToString();
-                string breed = row.Cells[4].Value.ToString();
-                string sex = row.Cells[5].Value.ToString();
-                string health_concerns = row.Cells[6].Value.ToString();
-                string photo = row.Cells[7].Value.ToString();
-                string status = row.Cells[8].Value.ToString();
-                //Add more
-                txttagID.Text = tagID;
-                txtanimal_name.Text = animal_name;
-                dtpdob.Value = DateTime.Parse(arrival_date);
-                txtspecies.Text = species;
-                txtbreed.Text = breed;
-                txtsex.Text = sex;
-                txthealth_concerns.Text = health_concerns;
-                txtphoto.Text = photo;
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    if (button2.Text.Equals("Edit"))
+        //    {
+        //        int rowindex = dataGridView1.CurrentRow.Index;
+        //        DataGridViewRow row = dataGridView1.Rows[rowindex];
+        //        string tagID = row.Cells[0].Value.ToString();
+        //        string animal_name = row.Cells[1].Value.ToString();
+        //        string arrival_date = row.Cells[2].Value.ToString();
+        //        string species = row.Cells[3].Value.ToString();
+        //        string breed = row.Cells[4].Value.ToString();
+        //        string sex = row.Cells[5].Value.ToString();
+        //        string health_concerns = row.Cells[6].Value.ToString();
+        //        string photo = row.Cells[7].Value.ToString();
+        //        string status = row.Cells[8].Value.ToString();
+        //        //Add more
+        //        txttagID.Text = tagID;
+        //        txtanimal_name.Text = animal_name;
+        //        dtpdob.Value = DateTime.Parse(arrival_date);
+        //        txtspecies.Text = species;
+        //        txtbreed.Text = breed;
+        //        txtsex.Text = sex;
+        //        txthealth_concerns.Text = health_concerns;
+        //        txtphoto.Text = photo;
 
 
-                button2.Text = "Save Changes";
-            }
-            else
-            {
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WindowsFormsApp1.Properties.Settings.RanchConnectionString"].ConnectionString))
-                {
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.CommandType = CommandType.Text;
-                        //feild =@feild,
-                        if (txtphoto.Text.Length < 1)
-                        {
-                            //add each feild to update statment 
-                            //cmd.CommandText = "UPDATE Bedding_Inventory SET animal_name=@animal_name, WHERE bedID=@bedID";
-                            //Update statment without photo
-                            cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, WHERE tagID=@tagID";
+        //        button2.Text = "Save Changes";
+        //    }
+        //    else
+        //    {
+        //        using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WindowsFormsApp1.Properties.Settings.RanchConnectionString"].ConnectionString))
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand())
+        //            {
+        //                cmd.CommandType = CommandType.Text;
+        //                //feild =@feild,
+        //                if (txtphoto.Text.Length < 1)
+        //                {
+        //                    //add each feild to update statment 
+        //                    //Update statment without photo
+        //                    cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, arrival_date=@arrival_date,species=@species,breed=@breed,sex=@sex,health_concerns=@health_concerns WHERE tagID=@tagID";
 
-                        }
-                        else
-                        {//add each feild to update statment 
-                         //cmd.CommandText = "UPDATE Bedding_Inventory SET animal_name=@animal_name, WHERE bedID=@bedID";
-                         //Update statment with photo
-                            cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, WHERE tagID=@tagID";
-                            cmd.Parameters.Add("@Photo", SqlDbType.VarBinary).Value = FileProcessor.GetBytesFromFile(txtphoto.Text);
-                        }
+        //                }
+        //                else
+        //                {//add each feild to update statment 
+        //                 //Update statment with photo
+        //                    cmd.CommandText = "UPDATE Ranch_Animal SET animal_name=@animal_name, arrival_date=@arrival_date,species=@species,breed=@breed,sex=@sex,health_concerns=@health_concerns,Photo=@Photo WHERE tagID=@tagID";
+        //                    cmd.Parameters.Add("@Photo", SqlDbType.VarBinary).Value = FileProcessor.GetBytesFromFile(txtphoto.Text);
+        //                }
 
-                        cmd.Parameters.Add("@tagID", SqlDbType.NVarChar).Value = txttagID.Text;
-                        cmd.Parameters.Add("@animal_name", SqlDbType.NVarChar).Value = txtanimal_name.Text;
-                        cmd.Parameters.Add("@arrival_date", SqlDbType.Date).Value = dtpdob.Value;
-                        cmd.Parameters.Add("@species", SqlDbType.NVarChar).Value = txtspecies.Text;
-                        cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text;
-                        cmd.Parameters.Add("@sex", SqlDbType.NVarChar).Value = txtsex.Text;
-                        cmd.Parameters.Add("@health_concerns", SqlDbType.Date).Value = txthealth_concerns.Text;
+        //                cmd.Parameters.Add("@tagID", SqlDbType.NVarChar).Value = txttagID.Text;
+        //                cmd.Parameters.Add("@animal_name", SqlDbType.NVarChar).Value = txtanimal_name.Text;
+        //                cmd.Parameters.Add("@arrival_date", SqlDbType.Date).Value = dtpdob.Value;
+        //                cmd.Parameters.Add("@species", SqlDbType.NVarChar).Value = txtspecies.Text;
+        //                cmd.Parameters.Add("@breed", SqlDbType.NVarChar).Value = txtbreed.Text;
+        //                cmd.Parameters.Add("@sex", SqlDbType.NVarChar).Value = txtsex.Text;
+        //                cmd.Parameters.Add("@health_concerns", SqlDbType.NVarChar).Value = txthealth_concerns.Text;
 
-                        cmd.Connection = conn;
-                        conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                    }
+        //                cmd.Connection = conn;
+        //                conn.Open();
+        //                int rowsAffected = cmd.ExecuteNonQuery();
+        //            }
 
-                }
-                this.ranch_AnimalTableAdapter.Fill(this.ranch_Animal_DataSet.Ranch_Animal);
-                button2.Text = "Edit";
-            }
+        //        }
+        //        this.ranch_AnimalTableAdapter2.Fill(this.ranchAnimalwithArrivalDateRanchDataSet.Ranch_Animal);
+        //        button2.Text = "Edit";
+        //        MessageBox.Show("Edits Saved");
+        //    }
 
-        }
+
 
         private void txtspecies_TextChanged(object sender, EventArgs e)
         {
@@ -223,8 +241,17 @@ namespace WindowsFormsApp1
 
         private void BacktoMain_Click(object sender, EventArgs e)
         {
-            RanchDatabase RanchDatabaseForm = new RanchDatabase();
-            RanchDatabaseForm.Show();
-        } }
+            this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
+}
+
+   
 

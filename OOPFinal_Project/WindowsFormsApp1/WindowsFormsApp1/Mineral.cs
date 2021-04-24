@@ -89,16 +89,18 @@ namespace WindowsFormsApp1
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity+@NewQuantity WHERE Mineral_name=@Mineral_name";
+                    cmd.CommandText = "UPDATE Current_Mineral_Inventory SET Quantity= Quantity+@NewQuantity WHERE Mineral_Type=@Mineral_name2";
                     int Quantity = int.Parse(tbquantity.Text);
                     cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbquantity.Text;
-                    cmd.Parameters.Add("@Mineral_name", SqlDbType.NVarChar).Value = cbMineral_Name.Text;
+                    cmd.Parameters.Add("@Mineral_name2", SqlDbType.NVarChar).Value = cbMineral_Name.Text;
                     cmd.ExecuteNonQuery();
                 }
+                
             }
 
-            
+
             this.mineral_Tub_InventoryTableAdapter.Fill(this.mineral_TubRanchDataSet.Mineral_Tub_Inventory);
+            MessageBox.Show("Mineral Tub added to inventroy. ");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -116,10 +118,10 @@ namespace WindowsFormsApp1
                     cmd.Connection = conn;
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Mineral_name=@Mineral_name";
+                    cmd.CommandText = "UPDATE Current_Mineral_Inventory SET Quantity= Quantity-@NewQuantity WHERE Mineral_Type=@Mineral_name2";
                     int Quantity = int.Parse(tbquantity.Text);
                     cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbquantity.Text;
-                    cmd.Parameters.Add("@Mineral_name", SqlDbType.NVarChar).Value = cbMineral_Name.Text;
+                    cmd.Parameters.Add("@Mineral_name2", SqlDbType.NVarChar).Value = cbMineral_Name.Text;
                     cmd.ExecuteNonQuery();
                 }
 
@@ -178,9 +180,8 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RanchDatabase RanchDatabaseForm = new RanchDatabase();
-            RanchDatabaseForm.Show();
+            this.Close();
         }
     }
-    }
+}
 

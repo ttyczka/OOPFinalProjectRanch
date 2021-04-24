@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "INSERT Bedding_Inventory ([Material],[Quanity],[Unit],[Price],[avg_replacement_rate],[date]) VALUES (@Material,@Quanity,@Unit,@Price,@avg_replacement_rate,@date)";
+                    cmd.CommandText = "INSERT Bedding_Inventory ([Material],[Quantity],[Unit],[Price],[avg_replacement_rate],[date]) VALUES (@Material,@Quantity,@Unit,@Price,@avg_replacement_rate,@date)";
                     cmd.Parameters.Add("@Material", SqlDbType.NVarChar).Value = cbMaterial.Text;
                     cmd.Parameters.Add("@Quantity", SqlDbType.NVarChar).Value = tbquantity.Text;
                     cmd.Parameters.Add("@Unit", SqlDbType.NVarChar).Value = cbUnit.Text;
@@ -77,16 +77,17 @@ namespace WindowsFormsApp1
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity+@NewQuantity WHERE Material=@Material";
+                    cmd.CommandText = "UPDATE Current_Bed_Inventory SET Quantity= Quantity+@NewQuantity WHERE Material=@Material2";
                     int Quantity = int.Parse(tbquantity.Text);
                     cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbquantity.Text;
-                    cmd.Parameters.Add("@Material", SqlDbType.NVarChar).Value = cbMaterial.Text;
+                    cmd.Parameters.Add("@Material2", SqlDbType.NVarChar).Value = cbMaterial.Text;
                     cmd.ExecuteNonQuery();
                 }
-
+               
             }
 
-            this.bedding_InventoryTableAdapter.Fill(this.bedRanchDataSet.Bedding_Inventory);
+            this.bedding_InventoryTableAdapter1.Fill(this.bedding_Quantity_RanchDataSet.Bedding_Inventory);
+            MessageBox.Show("Bedding added to inventroy. ");
         }
 
         //private void btnEdit_Click(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace WindowsFormsApp1
         //            }
 
         //        }
-        //        this.bedding_InventoryTableAdapter.Fill(this.bedRanchDataSet.Bedding_Inventory);
+        //                    this.bedding_InventoryTableAdapter1.Fill(this.bedding_Quantity_RanchDataSet.Bedding_Inventory);
         //        btnEdit.Text = "Edit";
         //    }
         //}
@@ -154,21 +155,22 @@ namespace WindowsFormsApp1
                     cmd.Connection = conn;
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Material=@Material";
+                    cmd.CommandText = "UPDATE Current_Bed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Material=@Material2";
                     int Quantity = int.Parse(tbquantity.Text);
                     cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbquantity.Text;
-                    cmd.Parameters.Add("@Material", SqlDbType.NVarChar).Value = cbMaterial.Text;
+                    cmd.Parameters.Add("@Material2", SqlDbType.NVarChar).Value = cbMaterial.Text;
                     cmd.ExecuteNonQuery();
                 }
 
             }
-            this.bedding_InventoryTableAdapter.Fill(this.bedRanchDataSet.Bedding_Inventory);
+            this.bedding_InventoryTableAdapter1.Fill(this.bedding_Quantity_RanchDataSet.Bedding_Inventory);
         }
 
         private void Bed_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bedRanchDataSet.Bedding_Inventory' table. You can move, or remove it, as needed.
-            this.bedding_InventoryTableAdapter.Fill(this.bedRanchDataSet.Bedding_Inventory);
+            // TODO: This line of code loads data into the 'bedding_Quantity_RanchDataSet.Bedding_Inventory' table. You can move, or remove it, as needed.
+            this.bedding_InventoryTableAdapter1.Fill(this.bedding_Quantity_RanchDataSet.Bedding_Inventory);
+            
 
         }
 

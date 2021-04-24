@@ -33,35 +33,39 @@
             this.lbBed = new System.Windows.Forms.Label();
             this.BacktoMain = new System.Windows.Forms.Button();
             this.dgvWWA = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.who_has_Been_FedRanchDataSet = new WindowsFormsApp1.Who_has_Been_FedRanchDataSet();
-            this.whohasBeenFedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.who_has_Been_Fed_ViewTableAdapter = new WindowsFormsApp1.Who_has_Been_FedRanchDataSetTableAdapters.Who_has_Been_Fed_ViewTableAdapter();
             this.speciesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.whohasBeenFedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.who_has_Been_FedRanchDataSet = new WindowsFormsApp1.Who_has_Been_FedRanchDataSet();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.who_has_Been_Fed_ViewTableAdapter = new WindowsFormsApp1.Who_has_Been_FedRanchDataSetTableAdapters.Who_has_Been_Fed_ViewTableAdapter();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.who_has_Been_FedRanchDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.whohasBeenFedViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.who_has_Been_FedRanchDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbBed
             // 
             this.lbBed.AutoSize = true;
-            this.lbBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBed.Location = new System.Drawing.Point(26, 18);
             this.lbBed.Name = "lbBed";
-            this.lbBed.Size = new System.Drawing.Size(199, 25);
+            this.lbBed.Size = new System.Drawing.Size(296, 29);
             this.lbBed.TabIndex = 47;
-            this.lbBed.Text = "Who Has Been Fed";
+            this.lbBed.Text = "Who Has Been Fed Today";
+            this.lbBed.Click += new System.EventHandler(this.lbBed_Click);
             // 
             // BacktoMain
             // 
-            this.BacktoMain.Location = new System.Drawing.Point(689, 399);
+            this.BacktoMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BacktoMain.Location = new System.Drawing.Point(857, 477);
             this.BacktoMain.Name = "BacktoMain";
-            this.BacktoMain.Size = new System.Drawing.Size(75, 23);
+            this.BacktoMain.Size = new System.Drawing.Size(75, 24);
             this.BacktoMain.TabIndex = 46;
             this.BacktoMain.Text = "Back";
             this.BacktoMain.UseVisualStyleBackColor = true;
@@ -77,33 +81,10 @@
             this.quantityDataGridViewTextBoxColumn,
             this.unitDataGridViewTextBoxColumn});
             this.dgvWWA.DataSource = this.whohasBeenFedViewBindingSource;
-            this.dgvWWA.Location = new System.Drawing.Point(31, 61);
+            this.dgvWWA.Location = new System.Drawing.Point(29, 61);
             this.dgvWWA.Name = "dgvWWA";
-            this.dgvWWA.Size = new System.Drawing.Size(444, 478);
+            this.dgvWWA.Size = new System.Drawing.Size(444, 412);
             this.dgvWWA.TabIndex = 45;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(608, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 316);
-            this.pictureBox1.TabIndex = 44;
-            this.pictureBox1.TabStop = false;
-            // 
-            // who_has_Been_FedRanchDataSet
-            // 
-            this.who_has_Been_FedRanchDataSet.DataSetName = "Who_has_Been_FedRanchDataSet";
-            this.who_has_Been_FedRanchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // whohasBeenFedViewBindingSource
-            // 
-            this.whohasBeenFedViewBindingSource.DataMember = "Who_has_Been_Fed_View";
-            this.whohasBeenFedViewBindingSource.DataSource = this.who_has_Been_FedRanchDataSet;
-            // 
-            // who_has_Been_Fed_ViewTableAdapter
-            // 
-            this.who_has_Been_Fed_ViewTableAdapter.ClearBeforeFill = true;
             // 
             // speciesDataGridViewTextBoxColumn
             // 
@@ -129,11 +110,45 @@
             this.unitDataGridViewTextBoxColumn.HeaderText = "unit";
             this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
             // 
+            // whohasBeenFedViewBindingSource
+            // 
+            this.whohasBeenFedViewBindingSource.DataMember = "Who_has_Been_Fed_View";
+            this.whohasBeenFedViewBindingSource.DataSource = this.who_has_Been_FedRanchDataSet;
+            // 
+            // who_has_Been_FedRanchDataSet
+            // 
+            this.who_has_Been_FedRanchDataSet.DataSetName = "Who_has_Been_FedRanchDataSet";
+            this.who_has_Been_FedRanchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(493, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(439, 203);
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // who_has_Been_Fed_ViewTableAdapter
+            // 
+            this.who_has_Been_Fed_ViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(493, 257);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(439, 203);
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // Who_Has_Been_Fed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 572);
+            this.ClientSize = new System.Drawing.Size(954, 516);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbBed);
             this.Controls.Add(this.BacktoMain);
             this.Controls.Add(this.dgvWWA);
@@ -143,9 +158,10 @@
             this.Text = "Who Has Been Fed";
             this.Load += new System.EventHandler(this.Who_Has_Been_Fed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.who_has_Been_FedRanchDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.whohasBeenFedViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.who_has_Been_FedRanchDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +179,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

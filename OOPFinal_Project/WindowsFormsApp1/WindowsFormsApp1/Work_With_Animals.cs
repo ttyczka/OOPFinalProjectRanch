@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
                         cmd.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
                         cmd.ExecuteNonQuery();
                     }
-                   
+                    MessageBox.Show("Work Added");
                 }
 
             }
@@ -154,8 +154,7 @@ namespace WindowsFormsApp1
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form Main_Menu_Form = new Form();
-            Main_Menu_Form.Show();
+            this.Close();
         }
 
         //private void btnEdit_Click(object sender, EventArgs e)
@@ -229,6 +228,16 @@ namespace WindowsFormsApp1
         }
 
         private void dgvWWA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

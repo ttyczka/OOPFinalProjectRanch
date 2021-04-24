@@ -44,6 +44,15 @@
             this.ranch_AnimalTableAdapter1 = new WindowsFormsApp1.Ranch_Animal_DataSetTableAdapters.Ranch_AnimalTableAdapter();
             this.lbBed = new System.Windows.Forms.Label();
             this.dgvWWA = new System.Windows.Forms.DataGridView();
+            this.feedIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recommendedfeedrateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedRanchDataSet = new WindowsFormsApp1.FeedRanchDataSet();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,30 +61,21 @@
             this.ranch_Animal_DataSet1 = new WindowsFormsApp1.Ranch_Animal_DataSet();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.feedRanchDataSet = new WindowsFormsApp1.FeedRanchDataSet();
-            this.feedInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.feed_InventoryTableAdapter = new WindowsFormsApp1.FeedRanchDataSetTableAdapters.Feed_InventoryTableAdapter();
-            this.feedIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feedTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recommendedfeedrateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedRanchDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranch_Animal_DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.feedRanchDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedInventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.tbPrice, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbFood_Type, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbRecommended_Feed_Rate, 1, 4);
@@ -86,7 +86,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.LastName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbUnit, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 57);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 57);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -94,102 +94,112 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 281);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(418, 281);
             this.tableLayoutPanel1.TabIndex = 7;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tbPrice
             // 
-            this.tbPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbPrice.Location = new System.Drawing.Point(193, 171);
+            this.tbPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.Location = new System.Drawing.Point(178, 171);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(185, 20);
+            this.tbPrice.Size = new System.Drawing.Size(237, 21);
             this.tbPrice.TabIndex = 33;
             // 
             // cbFood_Type
             // 
-            this.cbFood_Type.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFood_Type.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFood_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFood_Type.FormattingEnabled = true;
             this.cbFood_Type.Items.AddRange(new object[] {
             "Hay",
             "Corn Silage",
             "Grain",
             "Pellets"});
-            this.cbFood_Type.Location = new System.Drawing.Point(193, 3);
+            this.cbFood_Type.Location = new System.Drawing.Point(178, 3);
             this.cbFood_Type.Name = "cbFood_Type";
-            this.cbFood_Type.Size = new System.Drawing.Size(185, 21);
+            this.cbFood_Type.Size = new System.Drawing.Size(237, 23);
             this.cbFood_Type.TabIndex = 33;
             // 
             // tbRecommended_Feed_Rate
             // 
-            this.tbRecommended_Feed_Rate.Location = new System.Drawing.Point(193, 227);
+            this.tbRecommended_Feed_Rate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbRecommended_Feed_Rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRecommended_Feed_Rate.Location = new System.Drawing.Point(178, 227);
             this.tbRecommended_Feed_Rate.Multiline = true;
             this.tbRecommended_Feed_Rate.Name = "tbRecommended_Feed_Rate";
-            this.tbRecommended_Feed_Rate.Size = new System.Drawing.Size(185, 20);
+            this.tbRecommended_Feed_Rate.Size = new System.Drawing.Size(237, 51);
             this.tbRecommended_Feed_Rate.TabIndex = 32;
             // 
             // txQuantity
             // 
             this.txQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txQuantity.Location = new System.Drawing.Point(193, 59);
+            this.txQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txQuantity.Location = new System.Drawing.Point(178, 59);
             this.txQuantity.Name = "txQuantity";
-            this.txQuantity.Size = new System.Drawing.Size(185, 20);
+            this.txQuantity.Size = new System.Drawing.Size(237, 21);
             this.txQuantity.TabIndex = 14;
             // 
             // UserPassword
             // 
-            this.UserPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.UserPassword.AutoSize = true;
-            this.UserPassword.Location = new System.Drawing.Point(129, 21);
+            this.UserPassword.Dock = System.Windows.Forms.DockStyle.Right;
+            this.UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserPassword.Location = new System.Drawing.Point(97, 0);
             this.UserPassword.Name = "UserPassword";
-            this.UserPassword.Size = new System.Drawing.Size(58, 13);
+            this.UserPassword.Size = new System.Drawing.Size(75, 56);
             this.UserPassword.TabIndex = 2;
             this.UserPassword.Text = "Food Type";
             // 
             // DateCreated
             // 
-            this.DateCreated.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.DateCreated.AutoSize = true;
-            this.DateCreated.Location = new System.Drawing.Point(55, 246);
+            this.DateCreated.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DateCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateCreated.Location = new System.Drawing.Point(3, 224);
             this.DateCreated.Name = "DateCreated";
-            this.DateCreated.Size = new System.Drawing.Size(132, 13);
+            this.DateCreated.Size = new System.Drawing.Size(169, 57);
             this.DateCreated.TabIndex = 10;
             this.DateCreated.Text = "Recommended Feed Rate";
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 189);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(133, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(39, 56);
             this.label1.TabIndex = 16;
             this.label1.Text = "Price";
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 133);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(141, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(31, 56);
             this.label3.TabIndex = 23;
             this.label3.Text = "Unit";
             // 
             // LastName
             // 
-            this.LastName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LastName.AutoSize = true;
-            this.LastName.Location = new System.Drawing.Point(141, 77);
+            this.LastName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastName.Location = new System.Drawing.Point(116, 56);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(46, 13);
+            this.LastName.Size = new System.Drawing.Size(56, 56);
             this.LastName.TabIndex = 6;
             this.LastName.Text = "Quantity";
             // 
             // cbUnit
             // 
-            this.cbUnit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUnit.FormattingEnabled = true;
             this.cbUnit.Items.AddRange(new object[] {
             "Handful ",
@@ -199,10 +209,11 @@
             "Hand Scoop",
             "Round Bale",
             "Wrapped Round Bale",
-            "Square Bale"});
-            this.cbUnit.Location = new System.Drawing.Point(193, 115);
+            "Square Bale",
+            "Small Square Bale"});
+            this.cbUnit.Location = new System.Drawing.Point(178, 115);
             this.cbUnit.Name = "cbUnit";
-            this.cbUnit.Size = new System.Drawing.Size(185, 21);
+            this.cbUnit.Size = new System.Drawing.Size(237, 23);
             this.cbUnit.TabIndex = 46;
             // 
             // ranch_AnimalTableAdapter1
@@ -212,10 +223,10 @@
             // lbBed
             // 
             this.lbBed.AutoSize = true;
-            this.lbBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBed.Location = new System.Drawing.Point(12, 18);
             this.lbBed.Name = "lbBed";
-            this.lbBed.Size = new System.Drawing.Size(155, 25);
+            this.lbBed.Size = new System.Drawing.Size(172, 29);
             this.lbBed.TabIndex = 25;
             this.lbBed.Text = "Feed Inventory";
             this.lbBed.Click += new System.EventHandler(this.lbBed_Click);
@@ -237,98 +248,6 @@
             this.dgvWWA.Name = "dgvWWA";
             this.dgvWWA.Size = new System.Drawing.Size(732, 191);
             this.dgvWWA.TabIndex = 29;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(3, 126);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 27;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(3, 3);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 26;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(534, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Date";
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(537, 31);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpDate.TabIndex = 30;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ranch_Animal_DataSet1
-            // 
-            this.ranch_Animal_DataSet1.DataSetName = "Ranch_Animal_DataSet";
-            this.ranch_Animal_DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(458, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(366, 288);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSubmit, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnBack, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(772, 386);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(85, 167);
-            this.tableLayoutPanel2.TabIndex = 46;
-            // 
-            // feedRanchDataSet
-            // 
-            this.feedRanchDataSet.DataSetName = "FeedRanchDataSet";
-            this.feedRanchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // feedInventoryBindingSource
-            // 
-            this.feedInventoryBindingSource.DataMember = "Feed_Inventory";
-            this.feedInventoryBindingSource.DataSource = this.feedRanchDataSet;
-            // 
-            // feed_InventoryTableAdapter
-            // 
-            this.feed_InventoryTableAdapter.ClearBeforeFill = true;
             // 
             // feedIDDataGridViewTextBoxColumn
             // 
@@ -373,6 +292,105 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
+            // feedInventoryBindingSource
+            // 
+            this.feedInventoryBindingSource.DataMember = "Feed_Inventory";
+            this.feedInventoryBindingSource.DataSource = this.feedRanchDataSet;
+            // 
+            // feedRanchDataSet
+            // 
+            this.feedRanchDataSet.DataSetName = "FeedRanchDataSet";
+            this.feedRanchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(3, 69);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(96, 27);
+            this.btnBack.TabIndex = 27;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(3, 3);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(96, 27);
+            this.btnSubmit.TabIndex = 26;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(534, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Date";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Location = new System.Drawing.Point(537, 34);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(235, 22);
+            this.dtpDate.TabIndex = 30;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 27);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ranch_Animal_DataSet1
+            // 
+            this.ranch_Animal_DataSet1.DataSetName = "Ranch_Animal_DataSet";
+            this.ranch_Animal_DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(458, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(366, 288);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btnSubmit, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnBack, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(767, 421);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(102, 99);
+            this.tableLayoutPanel2.TabIndex = 46;
+            // 
+            // feed_InventoryTableAdapter
+            // 
+            this.feed_InventoryTableAdapter.ClearBeforeFill = true;
+            // 
             // Feed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,11 +410,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWWA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedRanchDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ranch_Animal_DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.feedRanchDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedInventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

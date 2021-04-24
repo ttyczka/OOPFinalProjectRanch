@@ -19,14 +19,18 @@ namespace WindowsFormsApp1
 
         private void BacktoMain_Click(object sender, EventArgs e)
         {
-            RanchDatabase RanchDatabaseForm = new RanchDatabase();
-            RanchDatabaseForm.Show();
+            this.Close(); 
         }
 
         private void lowInventory_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'low_Inventory_RanchDataSet.Low_Inventory_View' table. You can move, or remove it, as needed.
             this.low_Inventory_ViewTableAdapter.Fill(this.low_Inventory_RanchDataSet.Low_Inventory_View);
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -69,8 +69,7 @@ namespace WindowsFormsApp1
 
         private void UsersForm_Click(object sender, EventArgs e)
         {
-            Ranch_Users NewUserForm = new Ranch_Users();
-            NewUserForm.Show();
+           
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -113,6 +112,21 @@ namespace WindowsFormsApp1
         {
             Who_Has_Been_Fed Who_Has_Been_Fed_Form = new Who_Has_Been_Fed();
             Who_Has_Been_Fed_Form.Show();
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
