@@ -110,31 +110,38 @@ namespace WindowsFormsApp1
                     cmd.Connection = conn;
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    if (cbAction.Text =="Feed")
-                    {
-                        cmd.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Feed_Type=@type";
-                        int Quantity = int.Parse(tbQuantity.Text);
-                        cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
-                        cmd.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
-                        cmd.ExecuteNonQuery();
-                    }
-                    else if (cbAction.Text =="Bed")
-                    {
+                    conn.Close();
+                    //SqlCommand cmd2 = new SqlCommand();
+                    //cmd2.Connection = conn;
+                    //conn.Open();
+                    //cmd2.CommandType = CommandType.Text;
+                    
+                    //if (cbAction.Text =="Feed")
+                    //{
+                    //    cmd2.CommandText = "UPDATE Currrent_Feed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Feed_Type=@type";
+                    //    int Quantity = int.Parse(tbQuantity.Text);
+                    //    cmd2.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
+                    //    cmd2.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
+                    //    cmd2.ExecuteNonQuery();
+                    //}
+                    //else if (cbAction.Text =="Bed")
+                    //{
 
-                        cmd.CommandText = "UPDATE Current_Bed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Material=@type";
-                        int Quantity = int.Parse(tbQuantity.Text);
-                        cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
-                        cmd.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
-                        cmd.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        cmd.CommandText = "UPDATE Current_Mineral_Inventory SET Quantity= Quantity-@NewQuantity WHERE Mineral_Type=@type";
-                        int Quantity = int.Parse(tbQuantity.Text);
-                        cmd.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
-                        cmd.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
-                        cmd.ExecuteNonQuery();
-                    }
+                    //    cmd2.CommandText = "UPDATE Current_Bed_Inventory SET Quantity= Quantity-@NewQuantity WHERE Material=@type";
+                    //    int Quantity = int.Parse(tbQuantity.Text);
+                    //    cmd2.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
+                    //    cmd2.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
+                    //    cmd2.ExecuteNonQuery();
+                    //}
+                    //else
+                    //{
+                    //    cmd2.CommandText = "UPDATE Current_Mineral_Inventory SET Quantity= Quantity-@NewQuantity WHERE Mineral_Type=@type";
+                    //    int Quantity = int.Parse(tbQuantity.Text);
+                    //    cmd2.Parameters.Add("@NewQuantity", SqlDbType.NVarChar).Value = tbQuantity.Text;
+                    //    cmd2.Parameters.Add("@type", SqlDbType.NVarChar).Value = cbType.Text;
+                    //    cmd2.ExecuteNonQuery();
+                    //}
+                    //conn.Close();
                     MessageBox.Show("Work Added");
                 }
 
